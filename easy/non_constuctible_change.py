@@ -8,3 +8,12 @@
 # that you can't create is 4. If you're given no coins, the minimum amount of
 # change that you can't create is 1.
 
+def nonConstructibleChange(coins):
+    coins.sort()
+    min_cng = 0
+    for i in coins:
+        if i > min_cng + 1:
+            break
+        min_cng += i
+
+    return min_cng + 1
